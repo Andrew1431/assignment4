@@ -60,7 +60,7 @@
 
     echo "<br><br><br><br>";
 
-    $xml = simplexml_load_file("part.xml") or die("Error: Cannot create object");
+    $xml = simplexml_load_file("../xml/part.xml") or die("Error: Cannot create object");
     foreach($xml->children() as $parts) {
         $vendorNo = intval($parts->vendorNo);
         $description = $parts->description;
@@ -80,7 +80,7 @@
         }
     }
 
-    $xml = simplexml_load_file("vendor.xml") or die("Error: Cannot create object");
+    $xml = simplexml_load_file("../xml/vendor.xml") or die("Error: Cannot create object");
         foreach($xml->children() as $vendors) {
             $vendorNo = intval($vendors->vendorNo);
             $vendorName = $vendors->vendorName;

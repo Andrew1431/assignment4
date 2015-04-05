@@ -28,8 +28,8 @@
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row[partID] . "</td>" .
-                    "<td>" . $row["Vendor Number"] . "</td>" .
+                    echo "<tr><td>" . $row["partID"] . "</td>" .
+                    "<td>" . $row["vendorNo"] . "</td>" .
                     "<td>" . $row["onHand"] . "</td>" .
                     "<td>" . $row["onOrder"] . "</td>" .
                     "<td>" . $row["cost"] . "</td>" .
