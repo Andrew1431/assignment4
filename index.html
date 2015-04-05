@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css"></link>
+    <script src="main.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href>Assignment 5<small> by Andrew Hartwig</small></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li id=cstmClock></li>
+                <script src="time.js"></script>
+            </ul>
+        </div>
+    </nav>
+    <div class="container pagestart">
+        <div class="jumbotron firstelement">
+            <br><br>
+            <h1>Assignment 5</h1>
+            <h3>Database handling with PHP and MySQL</h3><br>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary active" onclick="getPart();">Parts <span class="glyphicon glyphicon-book"></span></button>
+                <button type="button" class="btn btn-primary">Vendors <span class="glyphicon glyphicon-home"></span></button>
+                <button type="button" class="btn btn-primary">Edit <span class="glyphicon glyphicon-edit"></span></button>
+                <button type="button" class="btn btn-danger">Restore Database <span class="glyphicon glyphicon-off"></span></button>
+            </div><br><br>
+            <div class="row">
+                <div class="col-xs-12" id="dynamic"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
