@@ -1,46 +1,32 @@
-$('#menu button').on('click', function(event) {
-    if (!$(this).hasClass('active')) {
-        $('#menu button').removeClass('active');
-        $(this).addClass('active');
+var assignment5 = angular.module('assignment5' , ['ngAnimate']);
 
-        switch($(this).attr('id')) {
-            case "parts":
-                getPart();
-                break;
-            case "vendors":
-                getVendor();
-                break;
-            case "edit":
-                break;
-            case "reset":
-                break;
-        }
-    } else {
-        $('#menu button').removeClass('active');
-        $('#dynamic')[0].innerHTML = "";
-    }
+assignment5.controller('partsController', function($scope, $http) {
+    $http.get("http://75.127.14.7/assign4/res/php/part.php").success(function(response) {
+        $scope.parts = response.records;
+        console.log("hi mom!");
+    });
+
 });
 
-function getPart() {
-    var rhttp = new XMLHttpRequest();
-    rhttp.onreadystatechange = function() {
-        if (rhttp.readyState == 4 && rhttp.status == 200) {
-            document.getElementById("dynamic").innerHTML = rhttp.responseText;
+assignment5.controller('vendorsController', function($scope, $http) {
+    $http.get("http://75.127.14.7/assign4/res/php/vendor.php").success(function(response) {
+        $scope.vendors = response.records;
+        console.log("hi mom!");
+    });
+});
 
-        }
+
+
+assignment5.controller('global', function($scope) {
+    $scope.showBoth = true,
+    $scope.showVendors = false,
+    $scope.showParts = false,
+    $scope.vendorClick = function() {
+        $scope.showVendors = true;
+        $scope.showParts = false;
     }
-    rhttp.open("GET", "res/php/part.php", true);
-    rhttp.send();
-}
-
-function getVendor() {
-    var rhttp = new XMLHttpRequest();
-    rhttp.onreadystatechange = function() {
-        if (rhttp.readyState == 4 && rhttp.status == 200) {
-            document.getElementById("dynamic").innerHTML = rhttp.responseText;
-
-        }
+    $scope.partClick = function() {
+        $scope.showVendors = false;
+        $scope.showParts = true;
     }
-    rhttp.open("GET", "res/php/vendor.php", true);
-    rhttp.send();
-}
+});

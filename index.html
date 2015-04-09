@@ -6,8 +6,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="res/css/main.css">
+    <link rel="stylesheet" href="res/css/animation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://cdnjs.buttflare.com/ajax/libs/angular.js/1.3.14/angular-animate.js"></script>
 </head>
-<body>
+<body ng-app="assignment5" ng-controller="global">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -26,22 +29,69 @@
             <h3>Database handling with PHP and MySQL</h3><br>
             <div id="menu" class="btn-group btn-group-justified">
                 <div class="btn-group">
-                    <button type="button" id="parts" class="btn btn-primary btn-lg">Parts <span
+                    <button type="button" class="btn btn-primary btn-lg" ng-click="partClick()">Parts <span
                             class="glyphicon glyphicon-book"></span></button>
                 </div><div class="btn-group">
-                <button type="button" id="vendors" class="btn btn-primary btn-lg">Vendors <span
+                <button type="button" class="btn btn-primary btn-lg" ng-click="vendorClick()">Vendors <span
                         class="glyphicon glyphicon-home"></span></button></div>
                 <div class="btn-group">
-                    <button type="button" id="edit" class="btn btn-primary btn-lg">Edit <span
+                    <button type="button" class="btn btn-primary btn-lg">Edit <span
                             class="glyphicon glyphicon-edit"></span></button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" id="reset" class="btn btn-danger btn-lg">Restore Database <span
+                    <button type="button" class="btn btn-danger btn-lg">Restore Database <span
                             class="glyphicon glyphicon-off"></span></button>
                 </div>
             </div><br><br>
-            <div class="row">
-                <div class="col-xs-12" id="dynamic"></div>
+            <div class="row" >
+                <div class="col-xs-12" id="dynamic" ng-controller="partsController" ng-show="showParts">
+                    <table class="table table-striped" >
+                        <thead>
+                            <th>partID</th>
+                            <th>vendorNo</th>
+                            <th>description</th>
+                            <th>onHand</th>
+                            <th>onOrder</th>
+                            <th>cost</th>
+                            <th>listPrice</th>
+                        </thead>
+                        <tr ng-repeat="part in parts">
+                            <td>{{part.partID}}</td>
+                            <td>{{part.vendorNo}}</td>
+                            <td>{{part.description}}</td>
+                            <td>{{part.onHand}}</td>
+                            <td>{{part.onOrder}}</td>
+                            <td>{{part.cost}}</td>
+                            <td>{{part.listPrice}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12" id="dynamic" ng-controller="vendorsController" ng-show="showVendors">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>vendorNo</th>
+                            <th>vendorName</th>
+                            <th>address</th>
+                            <th>city</th>
+                            <th>provState</th>
+                            <th>postalZip</th>
+                            <th>country</th>
+                            <th>phone</th>
+                            <th>FAX</th>
+                        </thead>
+                        <tr ng-repeat="vendor in vendors">
+                            <td>{{vendor.vendorNo}}</td>
+                            <td>{{vendor.vendorName}}</td>
+                            <td>{{vendor.address1}}</td>
+                            <td>{{vendor.city}}</td>
+                            <td>{{vendor.provState}}</td>
+                            <td>{{vendor.postalZip}}</td>
+                            <td>{{vendor.country}}</td>
+                            <td>{{vendor.phone}}</td>
+                            <td>{{vendor.FAX}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
