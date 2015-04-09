@@ -6,8 +6,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="res/css/main.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -26,11 +24,21 @@
             <br><br>
             <h1>Assignment 5</h1>
             <h3>Database handling with PHP and MySQL</h3><br>
-            <div id="menu" class="btn-group">
-                <button type="button" id="parts" class="btn btn-primary">Parts <span class="glyphicon glyphicon-book"></span></button>
-                <button type="button" id="vendors" class="btn btn-primary">Vendors <span class="glyphicon glyphicon-home"></span></button>
-                <button type="button" id="edit" class="btn btn-primary">Edit <span class="glyphicon glyphicon-edit"></span></button>
-                <button type="button" id="reset" class="btn btn-danger">Restore Database <span class="glyphicon glyphicon-off"></span></button>
+            <div id="menu" class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button type="button" id="parts" class="btn btn-primary btn-lg">Parts <span
+                            class="glyphicon glyphicon-book"></span></button>
+                </div><div class="btn-group">
+                <button type="button" id="vendors" class="btn btn-primary btn-lg">Vendors <span
+                        class="glyphicon glyphicon-home"></span></button></div>
+                <div class="btn-group">
+                    <button type="button" id="edit" class="btn btn-primary btn-lg">Edit <span
+                            class="glyphicon glyphicon-edit"></span></button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="reset" class="btn btn-danger btn-lg">Restore Database <span
+                            class="glyphicon glyphicon-off"></span></button>
+                </div>
             </div><br><br>
             <div class="row">
                 <div class="col-xs-12" id="dynamic"></div>
